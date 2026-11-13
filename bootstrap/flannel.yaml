@@ -1,0 +1,8 @@
+podCidr: 10.42.0.0/16
+flannel:
+  cniBinDir: /var/lib/rancher/k3s/data/cni
+  cniConfDir: /var/lib/rancher/k3s/agent/etc/cni/net.d
+  args:
+    - --ip-masq
+    - --kube-subnet-mgr
+    - --iface=cluster0

@@ -1,0 +1,13 @@
+kubeProxyReplacement: "false"
+k8sServiceHost: 10.10.0.10
+k8sServicePort: 6443
+devices: cluster0
+routingMode: tunnel
+tunnelProtocol: vxlan
+cni:
+  binPath: /var/lib/rancher/k3s/data/cni
+  confPath: /var/lib/rancher/k3s/agent/etc/cni/net.d
+ipam:
+  mode: kubernetes
+operator:
+  replicas: 1

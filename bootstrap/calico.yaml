@@ -1,0 +1,19 @@
+installation:
+  controlPlaneReplicas: 1
+  kubeletVolumePluginPath: None
+  cni:
+    type: Calico
+    binDir: /var/lib/rancher/k3s/data/cni
+    confDir: /var/lib/rancher/k3s/agent/etc/cni/net.d
+  calicoNetwork:
+    bgp: Disabled
+    linuxDataplane: Iptables
+    nodeAddressAutodetectionV4:
+      interface: ^cluster0$
+    ipPools:
+      - cidr: 10.42.0.0/16
+        encapsulation: VXLAN
+        natOutgoing: Enabled
+        nodeSelector: all()
+apiServer:
+  enabled: false
